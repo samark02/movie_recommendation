@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+
+<head>
+  <meta charset="UTF-8">
+  <title>Stroke Predict Model</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="static/style.css">
+
+</head>
+
+<body>
+  <div class="header">
+    <div class="menulist">
+      <a href="/"><input type="submit" value="Home"></a>
+      <form method="POST" , action="{{url_for('prediction')}}">
+        <input type="submit" , value='Prediction'>
+      </form>
+      <form id="menu" method="POST" , action="{{url_for('recommendation')}}">
+        <input type="submit" , value='Recommendation'>
+      </form>
+    </div>
+  </div>
+
+    <div class="login">
+      <h1>This is Recommendation Page</h1>
+      <form class=pred_form action="{{ url_for('recommend_output')}}" method="post">
+        <select name="a" required name="Genre">
+          <option hidden>Recommendation Genre ?</option>
+          <option value="Action">Action</option>
+          <option value="Comedy">Comedy</option>
+          <option value="Adventure">Adventure</option>
+          <option value="Crime">Crime</option>
+          <option value="Drama">Drama</option>
+          <option value="Fantasy">Fantasy</option>
+          <option value="Thriller">Thriller</option>
+          <option value="Science Fiction">Science Fiction</option>
+        </select>
+        <input type="text" name="a" placeholder="Movie Name" required>
+  
+        <input type="submit" , value='Recommend'>
+      </form>
+    </div>
+</body>
+
+</html>
